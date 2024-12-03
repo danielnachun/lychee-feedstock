@@ -23,7 +23,7 @@ requirements:
     - openssl
 
 tests:
-    script:
+  - script:
       - lychee --help
 
 about:
