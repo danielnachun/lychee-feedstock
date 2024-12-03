@@ -2,11 +2,10 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-export OPENSSL_DIR=$PREFIX
+export CARGO_PROFILE_RELEASE_STRIP=symbols
+export CARGO_PROFILE_RELEASE_LTO=fat
+export OPENSSL_DIR=${PREFIX}
 export OPENSSL_NO_VENDOR=1
-
-# strip debug symbols
-export CARGO_PROFILE_RELEASE_STRIP=debuginfo
 
 # check licenses
 cargo-bundle-licenses \
@@ -14,10 +13,4 @@ cargo-bundle-licenses \
     --output THIRDPARTY.yml
 
 # build statically linked binary with Rust
-cargo install \
-  --bins \
-  --locked \
-  --no-track \
-  --path lychee-bin \
-  --profile release \
-  --root "${PREFIX}"
+cargo install --bins --no-track --locked --profile release --root ${PREFIX} --path lychee-bin
