@@ -3,7 +3,7 @@ About lychee-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lychee-feedstock/blob/main/LICENSE.txt)
 
-Home: https://lychee.cli.rs
+Home: https://lychee.cli.rs/
 
 Package license: Apache-2.0 OR MIT
 
@@ -15,7 +15,6 @@ Documentation: https://lychee.cli.rs/introduction
 
 Finds broken URLs and mail addresses inside Markdown, HTML,
 reStructuredText, websites and more!
-
 
 Current build status
 ====================
